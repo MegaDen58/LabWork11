@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception{
-        String regexp1 = "(((25[0-5])|(2[0-4]\\d))|((1\\d{2})|(\\D(\\d{1,2}))))\\.((((25[0-5])|(2[0-4]\\d))|((1\\d{2})|(\\d{1,2})))\\.){2}(((25[0-5])|(2[0-4]\\d))|((1\\d{2})|((\\d{1,2})\\D)))";
+        String regexp1 = "((((25[0-5])|(2[0-4]\\d))|((1\\d{2})|(\\D(\\d{1,2}))))\\.((((((25[0-5])|(2[0-4]\\d))|((1\\d{2})|(\\d{1,2})))\\.)){2})(((25[0-5])|(2[0-4]\\d))|(((1\\d{2}))|(\\d{1,2}))))(\\D|$)";
         Pattern pattern = Pattern.compile(regexp1);
         Scanner in = new Scanner(System.in);
         System.out.print("Введите предложение: ");
