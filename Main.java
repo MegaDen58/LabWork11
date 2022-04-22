@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception{
-        String regexp1 = "((((25[0-5])|(2[0-4]\\d))|((1\\d{2})|(\\D(\\d{1,2}))))\\.((((((25[0-5])|(2[0-4]\\d))|((1\\d{2})|(\\d{1,2})))\\.)){2})(((25[0-5])|(2[0-4]\\d))|(((1\\d{2}))|(\\d{1,2}))))(\\D|$)";
+        String regexp1 = "\\b((((25[0-5])|(2[0-4]\\d))|((1\\d{2})|(\\d{1,2})))\\.){3}(((25[0-5])|(2[0-4]\\d))|((1\\d{2})|(\\d{1,2})))\\b";
         Pattern pattern = Pattern.compile(regexp1);
         Scanner in = new Scanner(System.in);
         System.out.print("Введите предложение: ");
@@ -17,13 +17,13 @@ public class Main {
         try{
             FileWriter fileWriter = new FileWriter("output.txt");
             if(m.find()){
-                    String result = "Корректный IP адрес: " + m.group();
-                    fileWriter.write(result);
-                    fileWriter.flush();
+                String result = "Корректный IP адрес: " + m.group();
+                fileWriter.write(result);
+                fileWriter.flush();
             }
             else{
-                    fileWriter.write("Корректные IP-адресы не найдены.");
-                    fileWriter.flush();
+                fileWriter.write("Корректные IP-адресы не найдены.");
+                fileWriter.flush();
             }
         }
         catch(IOException ex){
