@@ -17,23 +17,13 @@ public class Main {
         try{
             FileWriter fileWriter = new FileWriter("output.txt");
             if(m.find()){
-                try{
                     String result = "Корректный IP адрес: " + m.group();
                     fileWriter.write(result);
                     fileWriter.flush();
-                }
-                catch(IOException ex){
-                    System.out.println(ex.getMessage());
-                }
             }
             else{
-                try {
                     fileWriter.write("Корректные IP-адресы не найдены.");
                     fileWriter.flush();
-                }
-                catch(IOException ex){
-                    System.out.println(ex.getMessage());
-                }
             }
         }
         catch(IOException ex){
